@@ -1,0 +1,656 @@
+/* ==========================================
+   1. RESET Y DISEÑO BASE
+   ========================================== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  padding: 80px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h2 {
+  color: #22c55e;
+  margin-bottom: 20px;
+  font-size: 2.2rem;
+}
+
+/* ==========================================
+   2. NAVEGACIÓN Y FOOTER
+   ========================================== */
+nav {
+  background: #020617;
+  padding: 15px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #22c55e;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #020617;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+/* ==========================================
+   3. COMPONENTES GLOBALES (BOTONES Y BADGES)
+   ========================================== */
+.btn {
+  background: #22c55e;
+  color: #020617;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #16a34a;
+  transform: scale(1.05);
+}
+
+.resolucion-badge {
+  background: #1e293b;
+  color: #94a3b8;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  display: inline-block;
+  border: 1px solid #334155;
+}
+
+.tecnologia-titulo {
+  background: #0f172a;
+  color: #22c55e;
+  font-size: 1.8rem;
+  margin: 40px 0 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-left: 5px solid #22c55e;
+  padding-left: 15px;
+  text-align: left;
+}
+
+/* ==========================================
+   4. SECCIÓN HERO (INICIO)
+   ========================================== */
+#inicio {
+  background: linear-gradient(rgba(2, 6, 23, 0.7), rgba(15, 23, 42, 0.8)), 
+              url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=2070&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  padding: 20px;
+  color: white;
+}
+
+.logo-img {
+  max-width: 150px; 
+  height: auto; 
+  margin-bottom: 15px; 
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.hero-lista {
+  list-style: none;
+  padding: 0;
+  font-size: 1.2rem;
+  text-align: left;
+  display: inline-block;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+.hero-lista li {
+  margin-bottom: 10px;
+}
+
+/* ==========================================
+   5. GRID DE PRODUCTOS Y CARDS
+   ========================================== */
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  color: white;
+}
+
+/* ==========================================
+   6. SECCIÓN DE SERVICIOS (MODERNA)
+   ========================================== */
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.servicio-card {
+  background: #1e293b;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.servicio-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+.servicio-img-top {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-bottom: 4px solid #22c55e;
+}
+
+.servicio-body {
+  padding: 25px 20px;
+  position: relative;
+  flex: 1;
+}
+
+.icon-bg {
+  width: 70px;
+  height: 70px;
+  background: #1e293b;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 4px solid #22c55e;
+}
+
+.servicio-icono {
+  width: 35px;
+  height: 35px;
+  fill: #22c55e;
+}
+
+.servicio-card h3 {
+  margin-top: 35px;
+  color: white;
+}
+
+/* ==========================================
+   7. SECCIÓN DE CONTACTO
+   ========================================== */
+.contacto-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.contacto-detalles, .contacto-formulario {
+  flex: 1;
+  min-width: 300px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  background: #1e293b;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.info-item svg {
+  width: 30px;
+  height: 30px;
+  fill: #22c55e;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.contacto-formulario {
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.contacto-formulario input,
+.contacto-formulario select,
+.contacto-formulario textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  background: #0f172a;
+  color: white;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.mapa-container {
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 1px solid #334155;
+}
+
+/* ==========================================
+   8. BOTÓN FLOTANTE WHATSAPP
+   ========================================== */
+.whatsapp-flotante {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25d366;
+  border-radius: 50px;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-flotante:hover {
+  transform: scale(1.1);
+  background-color: #1ebe57;
+}
+
+.whatsapp-icono {
+  width: 35px;
+  height: 35px;
+  fill: white;
+}
+
+/* ==========================================
+   NUEVO ENCABEZADO (HEADER) MEJORADO
+   ========================================== */
+
+.modern-header {
+  /* Fondo oscuro con un degradado sutil hacia abajo */
+  background: radial-gradient(circle at top right, #1e293b, #020617);
+  padding: 60px 20px;
+  border-bottom: 4px solid #22c55e; /* Línea verde decorativa al final */
+  position: relative;
+  overflow: hidden; /* Para que el brillo no se salga */
+}
+
+.header-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap; /* Para que se adapte a celulares */
+}
+
+/* --- Texto --- */
+.header-text {
+  flex: 1;
+  min-width: 300px;
+  text-align: left; /* Alineado a la izquierda se ve más pro */
+  z-index: 2;
+}
+
+.header-badge {
+  display: inline-block;
+  background: rgba(34, 197, 94, 0.15); /* Verde transparente */
+  color: #22c55e;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  border: 1px solid #22c55e;
+}
+
+.header-text h1 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin: 0 0 20px 0;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.header-text p {
+  font-size: 1.2rem;
+  color: #cbd5e1; /* Gris claro legible */
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+/* --- Visual (Logo) --- */
+.header-visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-width: 250px;
+}
+
+/* Busca este bloque en tu style.css y reemplázalo completo */
+.logo-hero {
+  width: 180px;
+  height: 180px; /* 1. FORZAMOS ALTURA IGUAL AL ANCHO (para que sea cuadrado primero) */
+  object-fit: cover; /* 2. EVITA QUE SE DEFORME SI LA IMAGEN NO ES CUADRADA */
+  border-radius: 50%; /* 3. EL RECORTE REDONDO */
+  
+  position: relative;
+  z-index: 2;
+  /* Cambiamos drop-shadow por box-shadow para que la sombra siga el círculo */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5); 
+  transition: transform 0.5s ease;
+  border: 3px solid rgba(34, 197, 94, 0.3); /* Opcional: un borde verde sutil para definir el círculo */
+}
+
+
+.logo-hero:hover {
+  transform: scale(1.05) rotate(-2deg); /* Pequeño movimiento al pasar el mouse */
+}
+
+/* El resplandor verde detrás del logo */
+.logo-glow {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.2) 0%, rgba(0,0,0,0) 70%);
+  border-radius: 50%;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulseGlow 4s infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+  100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
+}
+
+/* --- Ajuste para Celulares --- */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column-reverse; /* Pone el logo arriba y texto abajo en móvil */
+    text-align: center;
+  }
+  
+  .header-text {
+    text-align: center;
+  }
+  
+  .header-text p {
+    margin: 0 auto;
+  }
+  
+  .header-text h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* ==========================================
+   NUEVOS ESTILOS PARA EL INICIO (HOME)
+   ========================================== */
+
+/* --- 1. HERO HOME (PORTADA) --- */
+.hero-home {
+  background: radial-gradient(circle at top right, #1e293b, #020617);
+  padding: 60px 20px;
+  text-align: left; /* Alineación izquierda se ve más moderna */
+  display: flex;
+  align-items: center;
+  min-height: 80vh; /* Ocupa casi toda la pantalla */
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  width: 100%;
+  flex-wrap: wrap-reverse; /* En celular, la imagen va arriba */
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: #ffffff; 
+  background: linear-gradient(to right, #ffffff, #cbd5e1);
+  background-clip: text;         
+  -webkit-background-clip: text;  
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: #94a3b8;
+  margin-bottom: 30px;
+  max-width: 500px;
+}
+
+.hero-features span {
+  display: inline-block;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.hero-image {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+.logo-hero-small {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+/* Botón secundario (borde) */
+.btn-outline {
+  border: 2px solid #22c55e;
+  background: transparent;
+  color: #fff;
+  margin-left: 10px;
+}
+.btn-outline:hover {
+  background: #22c55e;
+  color: #020617;
+}
+
+/* --- 2. TARJETAS DE CONFIANZA --- */
+.trust-card {
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 12px;
+  border-bottom: 3px solid #22c55e;
+  transition: transform 0.3s ease;
+}
+.trust-card:hover {
+  transform: translateY(-5px);
+}
+.trust-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+/* --- 3. TARJETAS VISUALES (SERVICIOS) --- */
+.visual-card {
+  position: relative;
+  height: 350px;
+  border-radius: 15px;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+.visual-card:hover {
+  transform: scale(1.03);
+}
+
+.visual-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s;
+}
+
+.visual-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
+  text-align: left;
+}
+
+.visual-content h3 {
+  color: #22c55e;
+  font-size: 1.6rem;
+  margin: 0;
+}
+.visual-content p {
+  color: white;
+  margin: 5px 0 0 0;
+}
+
+/* --- 4. CAJA DE ALIANZA --- */
+.alianza-box {
+  display: flex;
+  background: #1e293b;
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 1000px;
+  margin: 40px auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  flex-wrap: wrap;
+}
+
+.alianza-img {
+  flex: 1;
+  min-width: 300px;
+  height: 300px; /* Altura mínima */
+}
+
+.alianza-info {
+  flex: 1;
+  padding: 40px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 300px;
+}
+
+/* --- 5. LOGOS --- */
+.logos-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  align-items: center;
+}
